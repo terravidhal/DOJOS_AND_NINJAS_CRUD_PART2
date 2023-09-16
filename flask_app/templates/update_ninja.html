@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- linking a css Boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- linking a css style sheet -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  <title>Update Ninja</title>
+</head>
+
+<body>
+  <div class="title w-300">
+    <h1> Edit Ninja {{Ninja.id}}</h1>
+    <a href="/dojos">Home</a>
+  </div>
+  <div class="container border border-secondary p-3 w-300">
+    <form action="/edit/{{Ninja.id}}" method="POST">
+      <input type="hidden" name="dojoId" value="{{Ninja.dojo_id}}"> {# input de type hidden, Foreign key dojo_id #}
+      <div class="form-row my-2">
+        <div class="form-group col-md-12">
+          <label for="NewFirstName">First Name</label>
+          <input type="text" value="{{Ninja.firstname}}" class="form-control border-secondary" name="NewFirstName"
+            id="NewFirstName">
+        </div>
+      </div>
+      <div class="form-row my-2">
+        <div class="form-group col-md-12">
+          <label for="NewLastName">Last Name</label>
+          <input type="text" value="{{Ninja.lastname}}" class="form-control border-secondary" name="NewLastName"
+            id="NewLastName">
+        </div>
+      </div>
+      <div class="form-row my-2">
+        <div class="form-group col-md-12">
+          <label for="age">Age:</label>
+          <input type="number" value="{{Ninja.age}}" class="form-control border-secondary" name="NewAge" id="age">
+        </div>
+      </div>
+      <div class="edit">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="/dojos/{{Ninja.dojo_id}}">Show Dojo</a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

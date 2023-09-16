@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+ /*dojos.html*/
+
+.ml-95 {
+  margin-left: 95px;
+}
+.elt {
+  width: 300px;
+}
+li {
+  list-style-type: none;
+  margin: 5px;
+}
+
+/*ninjas.html*/
+
+.w-300{
+    width: 300px;
+}
+.title{
+    margin: 0 auto;
+}
+.title h1{
+    margin-bottom: 30px;
+}
+.dojo_form{
+  display: flex;
+  flex-direction: column;
+}
